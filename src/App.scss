@@ -1,0 +1,92 @@
+$primary: #1A120B;
+$secondary: #3C2A21;
+$tertiary: #D5CEA3;
+$quaternary: #E5E5CB;
+
+.App {
+  height: 100vh;
+  background-color: $primary;
+  color: #E5E5CB;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.stream {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid $secondary;
+
+  &-frames {
+    height: 100%;
+    padding: 3.5em;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    &__item {
+      border: 1px solid $tertiary;
+      border-radius: 15px;
+    }
+  }
+
+  &-tools {
+    background-color: $secondary;
+
+    display: flex;
+    justify-content: space-between;
+
+    visibility: hidden;
+
+    padding: 1rem;
+    border-radius: 15px 15px 0px 0px;
+
+    div {
+      display: flex;
+    }
+
+    &__video {
+      margin-right: 1rem;
+    }
+  }
+
+  &:hover {
+    .stream-tools {
+      visibility: visible;
+    }
+  }
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1rem;
+
+  &-messages {
+    height: 100%;
+
+    &__mine {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .ant-input {
+    background: $tertiary;
+    border: $secondary;
+  }
+}
+
+.ant-btn {
+  background-color: $quaternary;
+}
